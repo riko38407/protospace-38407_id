@@ -30,13 +30,13 @@ class PrototypesController < ApplicationController
 
   def edit
     unless user_signed_in?
-      redirect_to action: :index
+      redirect_to action: :edit
     end
   end
 
   def update
    if @prototype.update(prototype_params)
-    redirect_to root_path(@prototype)
+    redirect_to  prototype_path(@prototype)
     else
    
     render :edit
